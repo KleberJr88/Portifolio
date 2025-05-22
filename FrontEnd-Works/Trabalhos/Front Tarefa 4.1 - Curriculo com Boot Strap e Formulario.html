@@ -1,0 +1,115 @@
+﻿<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Currículo - Kleber Diego M.</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      padding: 30px;
+      background-color: #f8f9fa;
+    }
+    .section-title {
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+<link rel="stylesheet" type="text/css" href="Front Tarefa 4.1 - Curriculo.css" media="screen" />
+  <div class="container">
+    <h1 class="text-center mb-4">Currículo - Kleber Diego M. Junior</h1>
+
+    <p><strong>Contato:</strong> <a href="mailto:degemiossaga@gmail.com">degemiossaga@gmail.com</a> | +55 (89) 99919-0261</p>
+
+    <h4 class="section-title">Objetivo Profissional</h4>
+    <p>Programador de Jogos em C# | Foco em Desenvolvimento com Unity</p>
+
+    <h4 class="section-title">Resumo Profissional</h4>
+    <p>Iniciante na área de desenvolvimento de jogos com experiência prática em programação C# e desenvolvimento de interfaces usando o motor Unity. Conhecimento básico em resolução de problemas, identificação de bugs, e uso do Unreal Engine para design de níveis e interfaces.</p>
+
+    <h4 class="section-title">Experiência Profissional</h4>
+    <p><strong>Estagiário Voluntário</strong><br>
+    Hospital Filantrópico Santa Casa de Misericórdia de Ponta Grossa<br>
+    <em>Novembro de 2023 - Março de 2024</em></p>
+    <ul>
+      <li>Edição de imagens para o setor de marketing.</li>
+      <li>Suporte técnico em TI: atualizações, limpeza de disco, recuperação de arquivos.</li>
+      <li>Diagnóstico e resolução de problemas básicos.</li>
+    </ul>
+
+    <h4 class="section-title">Formação Acadêmica</h4>
+    <ul>
+      <li>Graduação em Desenvolvimento de Jogos Digitais – PUC Minas Virtual (Em andamento)</li>
+      <li>Graduação em Engenharia de Software – Unicesumar, Ponta Grossa - PR (Em andamento)</li>
+      <li>Técnico em Informática – CEEPRU Frei José Apicella, Guadalupe - PI (Concluído - 2020)</li>
+    </ul>
+
+    <h4 class="section-title">Cursos e Especializações</h4>
+    <p>Storytelling e Game Design com Unity (Em andamento)</p>
+
+    <h4 class="section-title">Idiomas</h4>
+    <ul>
+      <li>Português: Avançado</li>
+      <li>Inglês: Intermediário</li>
+    </ul>
+
+    <h4 class="section-title">Habilidades Técnicas</h4>
+    <ul>
+      <li>Linguagens de Programação: C#</li>
+      <li>Engines: Unity (Intermediário), Mugen/Fight Factory (FF3), Unreal Engine (Básico)</li>
+      <li>Suporte Técnico: Diagnóstico e resolução de problemas de hardware/software</li>
+      <li>Edição de Imagens: Experiência básica</li>
+      <li>Resolução de Problemas: Interesse contínuo em evolução na área</li>
+    </ul>
+
+    <h4 class="section-title">Informações Adicionais</h4>
+    <ul>
+      <li>Experiência como editor de imagem e técnico de TI voluntário.</li>
+      <li>Rápida adaptação a interfaces de motores de desenvolvimento.</li>
+      <li>Proatividade e aprendizado contínuo.</li>
+    </ul>
+
+    <hr>
+
+    <h3 class="section-title">Avaliação do Currículo</h3>
+    <form id="avaliadorForm">
+      <div class="mb-3">
+        <label for="nome" class="form-label">Nome do Avaliador:</label>
+        <input type="text" class="form-control" id="nome" required>
+      </div>
+      <div class="mb-3">
+        <label for="email" class="form-label">E-mail:</label>
+        <input type="email" class="form-control" id="email" required>
+      </div>
+      <div class="mb-3">
+        <label for="empresa" class="form-label">Empresa:</label>
+        <input type="text" class="form-control" id="empresa">
+      </div>
+      <div class="mb-3">
+        <label for="comentario" class="form-label">Comentário sobre o Currículo:</label>
+        <textarea class="form-control" id="comentario" rows="4" required></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary">Enviar Avaliação</button>
+    </form>
+
+    <div id="resultado" class="mt-4" style="display: none;">
+      <h5>Informações do Avaliador:</h5>
+      <p><strong>Nome:</strong> <span id="rNome"></span></p>
+      <p><strong>E-mail:</strong> <span id="rEmail"></span></p>
+      <p><strong>Empresa:</strong> <span id="rEmpresa"></span></p>
+      <p><strong>Comentário:</strong> <span id="rComentario"></span></p>
+    </div>
+  </div>
+  <script>
+    document.getElementById('avaliadorForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+      document.getElementById('rNome').innerText = document.getElementById('nome').value;
+      document.getElementById('rEmail').innerText = document.getElementById('email').value;
+      document.getElementById('rEmpresa').innerText = document.getElementById('empresa').value;
+      document.getElementById('rComentario').innerText = document.getElementById('comentario').value;
+      document.getElementById('resultado').style.display = 'block';
+    });
+  </script>
+
+</body>
+</html>

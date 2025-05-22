@@ -1,0 +1,78 @@
+﻿<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8" />
+    <title>RPG Saint Seiya</title>
+    <style>
+        img {
+            width: 480px; 
+            height: 360px;
+            display: block; 
+            margin: 0 auto; 
+        }
+    </style>
+</head>
+<body>
+
+<link rel="stylesheet" type="text/css" href="Front tarefa 3.1.css" media="screen" />
+
+<h1>Armadura de Indio</h1>
+
+<a href="https://saintseiya.fandom.com/pt-br/wiki/Armadura_de_%C3%8Dndio">
+<img src="imagens/Guilty de Índio_Indus Guilty.jpg" alt="Imagem da armadura">
+</a>
+
+<p>A Armadura de Índio é uma das 88 Armaduras de Bronze do exército de Atena.</p>
+
+<h2>História</h2>
+<p>A constelação foi uma das doze criadas por Petrus Plancius... apareceu pela primeira vez em 1597.</p>
+
+<h3>Poderes e Armas</h3>
+<a href="https://aminoapps.com/c/cavaleiros-do-zodiaco-rpg-2112434/page/item/armadura-de-indio/kwx3_xvYTQIgRegK4X5Yg8QnVQL2rNgRM1q">
+<img src="imagens/Indus Guilty.jpg" alt="Imagem do elemento">
+</a>
+<p>O elemento principal da armadura é o fogo. Ela concede controle sobre a natureza.</p>
+
+<a href="https://aminoapps.com/c/cavaleiros-do-zodiaco-rpg-2112434/page/item/armadura-de-indio/kwx3_xvYTQIgRegK4X5Yg8QnVQL2rNgRM1q">
+<img src="imagens/Guilty de Índio_Indus Guilty Person.jpg" alt="Imagem do Machado">
+</a>
+<p>No ombro há um machado com poder equivalente à Excalibur, representando Tupã.</p>
+
+<h3>Curiosidade</h3>
+<a href="https://ssu.fandom.com/wiki/Guilty">
+<img src="imagens/Jorge_de_Fornax.jpg" alt="Imagem do Forno">
+</a>
+<p>A armadura foi posteriormente identificada como a armadura de Prata de Forno, com o cavaleiro Jorge.</p>
+
+<h3>Comentários</h3>
+<label for="username">Nome:</label>
+<input type="text" id="username" placeholder="Digite seu nome" />
+<br>
+<label for="comment">Comentário:</label>
+<input type="text" id="comment" placeholder="Digite seu comentário" />
+<br>
+<button onclick="salvarComentario()">Enviar</button>
+
+<div id="comentarios"></div>
+
+<script>
+    function salvarComentario() {
+        const nome = document.getElementById("username").value.trim();
+        const comentario = document.getElementById("comment").value.trim();
+        const divComentarios = document.getElementById("comentarios");
+
+        if (nome && comentario) {
+            const novoComentario = document.createElement("p");
+            novoComentario.innerHTML = `<strong>${nome}:</strong> ${comentario}`;
+            divComentarios.appendChild(novoComentario);
+
+            document.getElementById("username").value = "";
+            document.getElementById("comment").value = "";
+        } else {
+            alert("Por favor, preencha o nome e o comentário.");
+        }
+    }
+</script>
+
+</body>
+</html>

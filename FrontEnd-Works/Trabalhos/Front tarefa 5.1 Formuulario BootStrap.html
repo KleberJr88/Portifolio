@@ -1,0 +1,78 @@
+﻿<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Formulário de Dados</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<link rel="stylesheet" type="text/css" href="Front tarefa 5.1 Formuulario BootStrap.css" media="screen" 
+  <div class="container mt-5">
+    <h2 class="text-center titulo-formulario">Preencha seus dados</h2>
+    <form id="formDados" class="bg-dark text-white p-4 rounded">
+      <div class="mb-3">
+        <label for="nome" class="form-label">Nome</label>
+        <input type="text" class="form-control" id="nome" required />
+      </div>
+      <div class="mb-3">
+        <label for="idade" class="form-label">Idade</label>
+        <input type="number" class="form-control" id="idade" required />
+      </div>
+      <div class="mb-3">
+        <label for="escolaridade" class="form-label">Escolaridade</label>
+        <select class="form-select" id="escolaridade" required>
+          <option value="">Selecione</option>
+          <option>Fundamental</option>
+          <option>Médio</option>
+          <option>Superior</option>
+          <option>Pós-graduação</option>
+        </select>
+      </div>
+      <div class="mb-3">
+        <label for="genero" class="form-label">Gênero</label>
+        <select class="form-select" id="genero" required>
+          <option value="">Selecione</option>
+          <option>Masculino</option>
+          <option>Feminino</option>
+          <option>Outro</option>
+          <option>Prefiro não informar</option>
+        </select>
+      </div>
+      <div class="mb-3">
+        <label for="profissao" class="form-label">Profissão</label>
+        <input type="text" class="form-control" id="profissao" required />
+      </div>
+      <button type="submit" class="btn btn-purple w-100">Salvar</button>
+    </form>
+
+    <div class="mt-4" id="infoSalva">
+      <h4 class="text-white">Informações Salvas:</h4>
+      <ul class="list-group" id="listaInfos"></ul>
+    </div>
+  </div>
+
+  <script>
+    const form = document.getElementById('formDados');
+    const lista = document.getElementById('listaInfos');
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      const nome = document.getElementById('nome').value;
+      const idade = document.getElementById('idade').value;
+      const escolaridade = document.getElementById('escolaridade').value;
+      const genero = document.getElementById('genero').value;
+      const profissao = document.getElementById('profissao').value;
+
+      const item = document.createElement('li');
+      item.className = 'list-group-item bg-secondary text-white mt-2';
+      item.innerText = `Nome: ${nome}, Idade: ${idade}, Escolaridade: ${escolaridade}, Gênero: ${genero}, Profissão: ${profissao}`;
+      lista.appendChild(item);
+
+      form.reset();
+    });
+  </script>
+</body>
+</html>

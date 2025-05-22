@@ -1,0 +1,26 @@
+﻿body {
+  background-color: #000000;
+  color: white; /* texto branco */
+}
+
+.titulo-formulario {
+  color: #003366; /* azul escuro para o título */
+  margin-bottom: 20px;
+}
+
+label {
+  color: white; /* labels em branco */
+}
+
+h4 {
+  color: #003366; /* título da lista em azul escuro */
+}
+
+.btn-purple {
+  background-color: #6f00ff;
+  color: white;
+}
+
+.btn-purple:hover {
+  background-color: #5500cc;
+}

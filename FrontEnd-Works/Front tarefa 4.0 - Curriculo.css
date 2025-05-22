@@ -1,0 +1,448 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscrição para Vaga de Emprego</title>
+    <style>
+        :root {
+            --primary-color: #4e54c8;
+            --secondary-color: #16bffd;
+            --accent-color: #00ff9d;
+            --dark-bg: #0f172a;
+            --medium-bg: #1e293b;
+            --light-bg: #334155;
+            --text-light: #e2e8f0;
+            --text-gray: #94a3b8;
+            --border-radius: 6px;
+            --glow: 0 0 10px rgba(0, 255, 157, 0.3);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'JetBrains Mono', 'Consolas', monospace;
+        }
+
+        body {
+            background-color: var(--dark-bg);
+            color: var(--text-light);
+            line-height: 1.6;
+            background-image: 
+                radial-gradient(circle at 25% 25%, rgba(78, 84, 200, 0.1) 0%, transparent 40%),
+                radial-gradient(circle at 75% 75%, rgba(22, 191, 253, 0.1) 0%, transparent 40%);
+            padding: 0;
+            margin: 0;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 30px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header {
+            position: relative;
+            background-color: var(--medium-bg);
+            padding: 40px 30px;
+            border-radius: var(--border-radius);
+            margin-bottom: 30px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            border-left: 4px solid var(--accent-color);
+        }
+
+        header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 200px;
+            height: 200px;
+            background-image: linear-gradient(135deg, var(--secondary-color), transparent);
+            opacity: 0.1;
+            border-radius: 0 0 0 100%;
+        }
+
+        h1 {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            background: linear-gradient(90deg, var(--text-light), var(--accent-color));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .card {
+            background-color: var(--medium-bg);
+            border-radius: var(--border-radius);
+            padding: 25px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            border: 1px solid var(--light-bg);
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            box-shadow: var(--glow);
+            transform: translateY(-3px);
+            border-color: var(--accent-color);
+        }
+
+        .profile-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+        }
+
+        .profile-item {
+            display: flex;
+            align-items: center;
+            padding: 10px 15px;
+            background-color: var(--light-bg);
+            border-radius: var(--border-radius);
+        }
+
+        .profile-item-icon {
+            margin-right: 12px;
+            color: var(--accent-color);
+            font-size: 18px;
+        }
+
+        h2 {
+            font-size: 20px;
+            margin-bottom: 20px;
+            color: var(--secondary-color);
+            position: relative;
+            padding-left: 18px;
+            letter-spacing: 0.5px;
+        }
+
+        h2::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 4px;
+            background: linear-gradient(to bottom, var(--secondary-color), var(--accent-color));
+            border-radius: 4px;
+        }
+
+        .objective {
+            text-align: center;
+            background: linear-gradient(135deg, var(--medium-bg), var(--light-bg));
+            padding: 25px;
+            border-radius: var(--border-radius);
+            position: relative;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .objective p {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--accent-color);
+            text-shadow: 0 0 10px rgba(0, 255, 157, 0.3);
+        }
+
+        ul {
+            list-style-type: none;
+        }
+
+        li {
+            margin-bottom: 12px;
+            position: relative;
+            padding-left: 20px;
+            color: var(--text-gray);
+        }
+
+        li::before {
+            content: ">";
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
+            font-weight: bold;
+        }
+
+        a {
+            color: var(--secondary-color);
+            text-decoration: none;
+            position: relative;
+            padding-bottom: 2px;
+            transition: all 0.3s ease;
+        }
+
+        a:hover {
+            color: var(--accent-color);
+        }
+
+        a::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 1px;
+            bottom: 0;
+            left: 0;
+            background-color: var(--accent-color);
+            transform: scaleX(0);
+            transform-origin: bottom right;
+            transition: transform 0.3s ease;
+        }
+
+        a:hover::after {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+        }
+
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .skill-tag {
+            background-color: var(--light-bg);
+            color: var(--text-light);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            border: 1px solid transparent;
+            position: relative;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+        }
+
+        .skill-tag:hover {
+            border-color: var(--accent-color);
+            box-shadow: var(--glow);
+            transform: translateY(-2px);
+        }
+
+        .skill-tag::before {
+            content: "";
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            background-color: var(--accent-color);
+            border-radius: 50%;
+            margin-right: 8px;
+        }
+
+        .info-adicional {
+            border-left: 4px solid var(--accent-color);
+            padding: 15px 20px;
+            background-color: rgba(0, 255, 157, 0.05);
+            font-style: italic;
+        }
+
+        .progress-container {
+            width: 100%;
+            background-color: var(--dark-bg);
+            border-radius: 20px;
+            margin-top: 5px;
+            overflow: hidden;
+            height: 8px;
+        }
+
+        .progress-bar {
+            height: 100%;
+            border-radius: 20px;
+            background: linear-gradient(90deg, var(--secondary-color), var(--accent-color));
+        }
+
+        .idioma-item {
+            margin-bottom: 15px;
+        }
+
+        .idioma-info {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 5px;
+        }
+
+        .destaque {
+            color: var(--accent-color);
+            font-weight: bold;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid var(--light-bg);
+            color: var(--text-gray);
+            font-size: 14px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+            
+            header {
+                padding: 30px 20px;
+            }
+            
+            h1 {
+                font-size: 24px;
+            }
+            
+            .profile-info {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Efeitos de animação tech */
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(0, 255, 157, 0.4); }
+            70% { box-shadow: 0 0 0 10px rgba(0, 255, 157, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(0, 255, 157, 0); }
+        }
+
+        .tech-animation {
+            animation: pulse 2s infinite;
+        }
+
+        .code-line {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            font-size: 12px;
+            opacity: 0.5;
+            font-family: monospace;
+            color: var(--accent-color);
+        }
+
+        /* Decorações tech */
+        .tech-decorator {
+            position: absolute;
+            opacity: 0.1;
+            pointer-events: none;
+        }
+
+        .tech-circle {
+            position: absolute;
+            border: 1px solid var(--accent-color);
+            border-radius: 50%;
+        }
+
+        .tech-corner-tr {
+            top: 10px;
+            right: 10px;
+            width: 40px;
+            height: 40px;
+        }
+
+        .tech-corner-bl {
+            bottom: 10px;
+            left: 10px;
+            width: 60px;
+            height: 60px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Formulário de Inscrição - Vaga de Programador de Jogos</h1>
+            <div class="tech-decorator tech-circle tech-corner-tr"></div>
+        </header>
+
+        <div class="card">
+            <h2>Perfil</h2>
+            <div class="profile-info">
+                <div class="profile-item">
+                    <span class="profile-item-icon">⟩</span>
+                    <span><strong>Nome:</strong> Kleber Diego M. Junior</span>
+                </div>
+                <div class="profile-item">
+                    <span class="profile-item-icon">⟩</span>
+                    <span><strong>Email:</strong> <a href="mailto:degemiossaga@gmail.com">degemiossaga@gmail.com</a></span>
+                </div>
+                <div class="profile-item">
+                    <span class="profile-item-icon">⟩</span>
+                    <span><strong>Telefone:</strong> +55 (89) 99919-0261</span>
+                </div>
+            </div>
+            <span class="code-line">[ profile_data.loaded ]</span>
+        </div>
+
+        <div class="card objective tech-animation">
+            <h2 style="text-align: center; padding-left: 0; margin-bottom: 15px;">Objetivo Profissional</h2>
+            <p>Programador de Jogos C# com foco em Unity</p>
+            <div class="tech-decorator tech-circle tech-corner-bl"></div>
+        </div>
+
+        <div class="card">
+            <h2>Resumo Profissional</h2>
+            <p>
+                Iniciante em desenvolvimento de jogos com experiência em C#, interfaces com Unity, e conhecimentos básicos em Unreal Engine e Mugen/Fight Factory.
+            </p>
+            <span class="code-line">[ dev_profile.summary ]</span>
+        </div>
+
+        <div class="card">
+            <h2>Formação Acadêmica</h2>
+            <ul>
+                <li>Bacharelado em <span class="destaque">Desenvolvimento de Jogos</span> – PUC Minas (Em andamento)</li>
+                <li>Bacharelado em <span class="destaque">Engenharia de Software</span> – Unicesumar (Em andamento)</li>
+                <li>Técnico em <span class="destaque">Informática</span> – CEEPRU Frei José Apicella (Concluído - 2020)</li>
+            </ul>
+            <span class="code-line">[ education.display() ]</span>
+        </div>
+
+        <div class="card">
+            <h2>Habilidades Técnicas</h2>
+            <div class="skills-container">
+                <span class="skill-tag">Programação em C#</span>
+                <span class="skill-tag">Unity</span>
+                <span class="skill-tag">Mugen / Fight Factory</span>
+                <span class="skill-tag">Unreal Engine</span>
+                <span class="skill-tag">Suporte técnico</span>
+                <span class="skill-tag">Edição de imagens</span>
+            </div>
+            <span class="code-line">[ skills.map(renderTags) ]</span>
+        </div>
+
+        <div class="card">
+            <h2>Idiomas</h2>
+            <div class="idioma-item">
+                <div class="idioma-info">
+                    <span>Português</span>
+                    <span>Avançado</span>
+                </div>
+                <div class="progress-container">
+                    <div class="progress-bar" style="width: 95%"></div>
+                </div>
+            </div>
+            <div class="idioma-item">
+                <div class="idioma-info">
+                    <span>Inglês</span>
+                    <span>Intermediário</span>
+                </div>
+                <div class="progress-container">
+                    <div class="progress-bar" style="width: 65%"></div>
+                </div>
+            </div>
+            <span class="code-line">[ languages.load() ]</span>
+        </div>
+
+        <div class="card">
+            <h2>Informações Adicionais</h2>
+            <p class="info-adicional">Disponível para entrevistas e novas oportunidades. Proativo, com rápida adaptação e interesse em aprender sempre mais.</p>
+            <span class="code-line">[ additional_info.render() ]</span>
+        </div>
+
+        <footer>
+            Desenvolvedor de Jogos | C# | Unity | Game Programming
+        </footer>
+    </div>
+</body>
+</html>

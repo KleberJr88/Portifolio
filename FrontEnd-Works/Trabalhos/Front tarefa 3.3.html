@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8" />
+    <title>RPG Saint Seiya</title>
+    <style>
+        img {
+            width: 480px; 
+            height: 360px;
+            display: block; 
+            margin: 0 auto; 
+        }
+    </style>
+</head>
+<body>
+
+<link rel="stylesheet" type="text/css" href="Front tarefa 3.1.css" media="screen"/>
+
+<h1>Armadura de Apus</h1>
+
+<a href="https://saintseiya.fandom.com/pt-br/wiki/Armadura_de_Ave-do-para%C3%ADso">
+<img src="imagens/Apus.jpg" alt="Imagem da armadura">
+</a>
+
+<p>"Apus" vem do grego "apous", que significa "sem pé", referindo-se a aves-do-paraíso.</p>
+
+<h2>História</h2>
+<a href="https://saintseiya.fandom.com/pt-br/wiki/Shinato">
+<img src="imagens/apus_shinato.jpg" alt="Imagem da armadura e da Amazona">
+</a>
+<p>Shinato encontra Mirai enquanto esta conversava com Shoko na Montanha Togakushi.</p>
+
+<h3>Poderes e Armas</h3>
+<a href="https://aminoapps.com/c/cavaleirodozodiaco/page/item/armadura-de-apus-1-0/Qepq_kecYIeZXPxl3VePWdBel1qJmX1rxP">
+<img src="imagens/Shinato HD.png" alt="Imagem do cavaleiro">
+</a>
+
+<p>Elemento principal: vento. Pode herdar poderes da armadura de Phoenix.</p>
+
+<img src="imagens/Shinato.png" alt="Imagem do cavaleiro">
+<p>Usa penas como kunais para combate à distância, diferente de Phoenix que usa shurikens.</p>
+
+<h3>Comentários</h3>
+<label for="username">Nome:</label>
+<input type="text" id="username" placeholder="Digite seu nome" />
+<br>
+<label for="comment">Comentário:</label>
+<input type="text" id="comment" placeholder="Digite seu comentário" />
+<br>
+<button onclick="salvarComentario()">Enviar</button>
+
+<div id="comentarios"></div>
+
+<script>
+    function salvarComentario() {
+        const nome = document.getElementById("username").value.trim();
+        const comentario = document.getElementById("comment").value.trim();
+        const divComentarios = document.getElementById("comentarios");
+
+        if (nome && comentario) {
+            const novoComentario = document.createElement("p");
+            novoComentario.innerHTML = `<strong>${nome}:</strong> ${comentario}`;
+            divComentarios.appendChild(novoComentario);
+
+            document.getElementById("username").value = "";
+            document.getElementById("comment").value = "";
+        } else {
+            alert("Por favor, preencha o nome e o comentário.");
+        }
+    }
+</script>
+
+</body>
+</html>

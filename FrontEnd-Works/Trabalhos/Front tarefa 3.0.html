@@ -1,0 +1,80 @@
+﻿<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8" />
+    <title>RPG Saint Seiya</title>
+    <style>
+        img {
+            width: 480px; 
+            height: 360px;
+        }
+    </style>
+</head>
+<body>
+
+<link rel="stylesheet" type="text/css" href="Front tarefa 3.1.css" media="screen" />
+
+<h1>Armaduras Esquecidas</h1>
+
+<p>Na obra Saint Seiya, temos 89 armaduras, onde sua grande maioria é esquecida. Porém, algumas armaduras tinham um grande potencial de evolução.</p>
+
+<p><em>Esta página apresenta armaduras esquecidas da obra Saint Seiya, organizadas por tipo de constelação. Cada uma possui sua própria página com informações, imagens e links para sites relacionados. O conteúdo foi estruturado como uma seleção pessoal de favoritos, divididos por categoria dentro do universo do anime.</em></p>
+
+<h2>Índio</h2>
+<a href="Front tarefa 3.1.html"> 
+    <img src="Imagens/Guilty de Índio_Indus Guilty.jpg" alt="Imagem da armadura">
+</a>
+
+<p>Patente: <a href="https://saintseiya.fandom.com/pt-br/wiki/Armaduras_de_Atena">Bronze</a></p>
+<p>Aparição: <a href="https://saintseiya.fandom.com/pt-br/wiki/Cavaleiro_de_%C3%8Dndio_(s%C3%A9culo_XVIII)?file=Vlcsnap2011072015h20m45.jpg">Aparição</a></p>
+<p>Poderes: <a href="https://aminoapps.com/c/cavaleirodozodiaco/page/item/armadura-de-indio/0jzM_mjtZIjde0KEoBPPZ7ZKd4B15MRxrk">Poderes</a></p>
+
+<h2>Pintor</h2>
+<a href="Front tarefa 3.2.html"> 
+    <img src="Imagens/pintor.jpg" alt="Imagem da armadura">
+</a>
+<p>Patente: <a href="https://saintseiya.fandom.com/pt-br/wiki/Armaduras_de_Atena">Bronze</a></p>
+<p>Aparição: Infelizmente a única aparição de tal veste foi como um esqueleto morto que protege Jamir </p>
+<img src="Imagens/Santos_Esqueleto_2.JPG.jpg" alt="Imagem do esqueleto">
+<p>Poderes: <a href="https://aminoapps.com/c/cavaleirodozodiaco/page/item/armadura-de-indio/0jzM_mjtZIjde0KEoBPPZ7ZKd4B15MRxrk">Poderes</a></p>
+
+<h2>Apus</h2>
+<a href="Front tarefa 3.3.html"> 
+    <img src="Imagens/Apus.jpg" alt="Imagem da armadura">
+</a>
+<p>Patente: <a href="https://saintseiya.fandom.com/pt-br/wiki/Armaduras_de_Atena">Bronze</a></p>
+<p>Aparição: <a href="https://saintseiya.fandom.com/pt-br/wiki/Shinato">Aparição</a></p>
+<p>Poderes: <a href="https://aminoapps.com/c/cavaleirodozodiaco/page/item/armadura-de-ave-do-paraiso/7XbV_wXtNIaW17laaapaeNdNvm47B6vNmX">Poderes</a></p>
+
+<h3>Comentários</h3>
+<label for="username">Nome:</label>
+<input type="text" id="username" placeholder="Digite seu nome" />
+<br>
+<label for="comment">Comentário:</label>
+<input type="text" id="comment" placeholder="Digite seu comentário" />
+<br>
+<button onclick="salvarComentario()">Enviar</button>
+
+<div id="comentarios"></div>
+
+<script>
+    function salvarComentario() {
+        const nome = document.getElementById("username").value.trim();
+        const comentario = document.getElementById("comment").value.trim();
+        const divComentarios = document.getElementById("comentarios");
+
+        if (nome && comentario) {
+            const novoComentario = document.createElement("p");
+            novoComentario.innerHTML = `<strong>${nome}:</strong> ${comentario}`;
+            divComentarios.appendChild(novoComentario);
+
+            document.getElementById("username").value = "";
+            document.getElementById("comment").value = "";
+        } else {
+            alert("Por favor, preencha o nome e o comentário.");
+        }
+    }
+
+</script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8" />
+    <title>RPG Saint Seiya</title>
+    <style>
+        img {
+            width: 480px; 
+            height: 360px;
+            display: block; 
+            margin: 0 auto; 
+        }
+    </style>
+</head>
+<body>
+
+<link rel="stylesheet" type="text/css" href="Front tarefa 3.1.css" media="screen" />
+
+<h1>Armadura de Pintor</h1>
+
+<a href="https://saintseiya.fandom.com/pt-br/wiki/Armadura_de_Pintor">
+<img src="imagens/Cloth Pintor.jpg" alt="Imagem da armadura">
+</a>
+
+<p>A constelação Pictor representa um cavalete e paleta de pintor, em homenagem às artes.</p>
+
+<h2>História</h2>
+<p>O cavaleiro Aodal traiu Athena para servir Afrodite, como também fez Arion, filho de Poseidon.</p>
+
+<h3>Poderes e Armas</h3>
+<img src="imagens/aodal_by_nirti_dfdb5me-fullview.jpg" alt="Imagem do cavaleiro">
+<p>A armadura usa o vento como elemento e permite criar ilusões físicas e holográficas.</p>
+
+<img src="imagens/Aodal.jpg" alt="Imagem do Machado">
+<p>No ombro há um machado tão poderoso quanto a Excalibur, representando Tupã.</p>
+
+<img src="imagens/aodal_poster01_by_nirti_de7x5ul-fullview.jpg" alt="Imagem dos Pinceis">
+
+<h3>Obs:</h3>
+<p>Infelizmente, os links de informação sobre a armadura sumiram.</p>
+
+<h3>Comentários</h3>
+<label for="username">Nome:</label>
+<input type="text" id="username" placeholder="Digite seu nome" />
+<br>
+<label for="comment">Comentário:</label>
+<input type="text" id="comment" placeholder="Digite seu comentário" />
+<br>
+<button onclick="salvarComentario()">Enviar</button>
+
+<div id="comentarios"></div>
+
+<script>
+    function salvarComentario() {
+        const nome = document.getElementById("username").value.trim();
+        const comentario = document.getElementById("comment").value.trim();
+        const divComentarios = document.getElementById("comentarios");
+
+        if (nome && comentario) {
+            const novoComentario = document.createElement("p");
+            novoComentario.innerHTML = `<strong>${nome}:</strong> ${comentario}`;
+            divComentarios.appendChild(novoComentario);
+
+            document.getElementById("username").value = "";
+            document.getElementById("comment").value = "";
+        } else {
+            alert("Por favor, preencha o nome e o comentário.");
+        }
+    }
+</script>
+
+
+</body>
+</html>

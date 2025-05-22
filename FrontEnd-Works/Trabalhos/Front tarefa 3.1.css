@@ -1,0 +1,122 @@
+﻿/* Saint Seiya Forgotten Armors Wiki Stylesheet */
+
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+
+/* Global Reset and Base Styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f6f6f6;
+    color: #222;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    line-height: 1.6;
+}
+
+/* Wiki Container */
+.wiki-container {
+    background-color: white;
+    border: 1px solid #a7d7f9;
+    border-radius: 5px;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Headings */
+h1 {
+    color: #0645ad;
+    border-bottom: 1px solid #a7d7f9;
+    padding-bottom: 10px;
+    font-weight: 700;
+    font-size: 2.2em;
+}
+
+h2 {
+    color: #0645ad;
+    border-bottom: 1px solid #a7d7f9;
+    padding-bottom: 5px;
+    font-weight: 600;
+    font-size: 1.6em;
+}
+
+/* Images */
+img {
+    max-width: 480px;
+    max-height: 360px;
+    display: block;
+    margin: 15px auto;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    object-fit: cover;
+}
+
+/* Links */
+a {
+    color: #0645ad;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #3366bb;
+    text-decoration: underline;
+}
+
+/* Info Box */
+.info-box {
+    background-color: #f9f9f9;
+    border: 1px solid #a7d7f9;
+    border-radius: 5px;
+    padding: 15px;
+    margin: 15px 0;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+
+    .wiki-container {
+        padding: 15px;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    h1 {
+        font-size: 1.8em;
+    }
+
+    h2 {
+        font-size: 1.4em;
+    }
+}
+
+/* Print Styles */
+@media print {
+    body {
+        background-color: white;
+        color: black;
+    }
+
+    .wiki-container {
+        border: none;
+        box-shadow: none;
+    }
+
+    a {
+        color: black;
+        text-decoration: none;
+    }
+
+    a:after {
+        content: " (" attr(href) ")";
+        font-size: 0.8em;
+        color: #666;
+    }
+}

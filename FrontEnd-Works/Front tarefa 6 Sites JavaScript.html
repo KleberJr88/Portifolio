@@ -1,0 +1,135 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Sites do Trabalho</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    .site {
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      padding: 10px;
+      border-radius: 5px;
+    }
+    .site img {
+      width: 100px;
+      height: 100px;
+      vertical-align: middle;
+      cursor: pointer;
+      margin-bottom: 5px;
+    }
+    .descricao {
+      display: none;
+      margin-top: 5px;
+      color: #555;
+    }
+    button {
+      margin-top: 5px;
+      cursor: pointer;
+    }
+    #comentarios {
+      margin-top: 40px;
+    }
+    .comentario {
+      border-top: 1px solid #ddd;
+      margin-top: 10px;
+      padding-top: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Sites Profissionais</h1>
+
+  <div id="lista-sites"></div>
+
+  <div id="comentarios">
+    <h2>Comentários</h2>
+    <input type="text" id="usuario" placeholder="Seu nome"><br><br>
+    <textarea id="mensagem" rows="4" cols="40" placeholder="Escreva seu comentário"></textarea><br><br>
+    <button onclick="adicionarComentario()">Enviar Comentário</button>
+    <div id="lista-comentarios"></div>
+  </div>
+
+  <script>
+   const sites = [
+  {
+    nome: "Google",
+    url: "https://www.google.com",
+    imagem: "https://www.google.com/favicon.ico",
+    descricao: "O maior site de buscas do mundo."
+  },
+  {
+    nome: "YouTube",
+    url: "https://www.youtube.com",
+    imagem: "https://upload.wikimedia.org/wikipedia/commons/b/b8/YouTube_Logo_2017.svg",
+    descricao: "Site de vídeos para todos os gostos."
+  },
+  {
+    nome: "GitHub",
+    url: "https://www.github.com",
+    imagem: "https://github.githubassets.com/favicons/favicon.png",
+    descricao: "Hospedagem de código para projetos colaborativos."
+  },
+  {
+    nome: "Stack Overflow",
+    url: "https://stackoverflow.com",
+    imagem: "https://cdn.sstatic.net/Sites/stackoverflow/Img/favicon.ico",
+    descricao: "Perguntas e respostas sobre programação."
+  },
+  {
+  nome: "MDN Web Docs",
+  url: "https://developer.mozilla.org",
+  imagem: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQKv3YhvtA35R4QoWjhTKbMvP6ZdxcsdnoeaQ&s",
+  descricao: "Documentação completa para desenvolvedores web."
+  }
+    ];
+
+    const lista = document.getElementById('lista-sites');
+
+    sites.forEach((site, index) => {
+      const div = document.createElement('div');
+      div.className = 'site';
+
+      div.innerHTML = `
+        <a href="${site.url}" target="_blank">
+          <img src="${site.imagem}" alt="${site.nome}" title="Ir para o site">
+        </a>
+        <strong>${site.nome}</strong><br>
+        <button onclick="mostrarDescricao(${index})">Ver mais</button>
+        <p class="descricao" id="desc-${index}">${site.descricao}</p>
+      `;
+
+      lista.appendChild(div);
+    });
+
+    function mostrarDescricao(index) {
+      const desc = document.getElementById(`desc-${index}`);
+      desc.style.display = desc.style.display === "none" || desc.style.display === "" ? "block" : "none";
+    }
+
+    function adicionarComentario() {
+      const nome = document.getElementById('usuario').value.trim();
+      const msg = document.getElementById('mensagem').value.trim();
+      if (!nome || !msg) {
+        alert("Por favor, preencha nome e comentário.");
+        return;
+      }
+
+      const div = document.createElement('div');
+      div.className = 'comentario';
+      div.innerHTML = `<strong>${nome}</strong><p>${msg}</p>`;
+
+      document.getElementById('lista-comentarios').appendChild(div);
+      document.getElementById('usuario').value = '';
+      document.getElementById('mensagem').value = '';
+    }
+  </script>
+
+
+
+</body>
+</html>

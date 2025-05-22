@@ -1,0 +1,335 @@
+﻿<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Currículo - Kleber Diego M.</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400;700&display=swap');
+    
+    body {
+      padding: 0;
+      margin: 0;
+      background-color: #121212;
+      color: #7fff7f;
+      font-family: 'Roboto', sans-serif;
+      position: relative;
+      overflow-x: hidden;
+    }
+    
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 1000 1000'%3E%3Cg fill='none' stroke='%23103030' stroke-width='1' stroke-opacity='0.15'%3E%3Cpath d='M0,0 L1000,0 M0,200 L1000,200 M0,400 L1000,400 M0,600 L1000,600 M0,800 L1000,800 M0,1000 L1000,1000 M0,0 L0,1000 M200,0 L200,1000 M400,0 L400,1000 M600,0 L600,1000 M800,0 L800,1000 M1000,0 L1000,1000'/%3E%3Cpath d='M100,0 C150,50 150,150 100,200 C50,250 50,350 100,400 C150,450 150,550 100,600 C50,650 50,750 100,800 C150,850 150,950 100,1000' stroke-opacity='0.2'/%3E%3Cpath d='M300,0 C350,50 350,150 300,200 C250,250 250,350 300,400 C350,450 350,550 300,600 C250,650 250,750 300,800 C350,850 350,950 300,1000' stroke-opacity='0.2'/%3E%3Cpath d='M500,0 C550,50 550,150 500,200 C450,250 450,350 500,400 C550,450 550,550 500,600 C450,650 450,750 500,800 C550,850 550,950 500,1000' stroke-opacity='0.2'/%3E%3Cpath d='M700,0 C750,50 750,150 700,200 C650,250 650,350 700,400 C750,450 750,550 700,600 C650,650 650,750 700,800 C750,850 750,950 700,1000' stroke-opacity='0.2'/%3E%3Cpath d='M900,0 C950,50 950,150 900,200 C850,250 850,350 900,400 C950,450 950,550 900,600 C850,650 850,750 900,800 C950,850 950,950 900,1000' stroke-opacity='0.2'/%3E%3C/g%3E%3C/svg%3E");
+      opacity: 0.3;
+      z-index: -1;
+    }
+    
+    .container {
+      background-color: rgba(20, 25, 30, 0.8);
+      border: 1px solid #00ff8855;
+      border-radius: 15px;
+      box-shadow: 0 0 25px rgba(0, 255, 136, 0.2);
+      margin-top: 30px;
+      margin-bottom: 30px;
+      padding: 30px;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .container::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, #1e88e5, #00e676);
+      z-index: 1;
+    }
+    
+    h1, h3, h4, h5 {
+      font-family: 'Orbitron', sans-serif;
+      color: #00e676;
+      text-shadow: 0 0 10px rgba(0, 230, 118, 0.3);
+    }
+    
+    h1 {
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      padding-bottom: 15px;
+      border-bottom: 2px solid #1e88e5;
+      margin-bottom: 25px;
+    }
+    
+    .section-title {
+      margin-top: 40px;
+      margin-bottom: 15px;
+      position: relative;
+      padding-left: 20px;
+    }
+    
+    .section-title::before {
+      content: ">";
+      position: absolute;
+      left: 0;
+      color: #1e88e5;
+    }
+    
+    p, li {
+      line-height: 1.6;
+      color: #90caf9; /* Alterado para azul claro */
+    }
+    
+    a {
+      color: #64ffda;
+      text-decoration: none;
+      position: relative;
+      transition: all 0.3s;
+    }
+    
+    a:hover {
+      color: #00e676;
+      text-shadow: 0 0 8px rgba(0, 230, 118, 0.5);
+    }
+    
+    strong {
+      color: #00e676;
+    }
+    
+    ul {
+      list-style-type: none;
+      padding-left: 20px;
+    }
+    
+    ul li {
+      position: relative;
+      padding-left: 20px;
+      margin-bottom: 10px;
+    }
+    
+    ul li::before {
+      content: "⬢";
+      position: absolute;
+      left: 0;
+      color: #1e88e5;
+      font-size: 12px;
+    }
+    
+    hr {
+      border-color: #1e88e5;
+      opacity: 0.5;
+    }
+    
+    /* Form Styling */
+    form {
+      background-color: rgba(15, 20, 25, 0.7);
+      padding: 25px;
+      border-radius: 10px;
+      border: 1px solid #1e88e555;
+      box-shadow: 0 0 15px rgba(30, 136, 229, 0.2);
+    }
+    
+    .form-label {
+      color: #00e676;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.9rem;
+    }
+    
+    .form-control {
+      background-color: rgba(30, 35, 40, 0.8);
+      border: 1px solid #1e88e555;
+      color: #90caf9;
+      transition: all 0.3s;
+    }
+    
+    .form-control:focus {
+      background-color: rgba(30, 35, 40, 0.9);
+      border-color: #00e676;
+      box-shadow: 0 0 8px rgba(0, 230, 118, 0.4);
+      color: #e0ffe0;
+    }
+    
+    .btn-primary {
+      background: linear-gradient(135deg, #1e88e5, #00e676);
+      border: none;
+      font-family: 'Orbitron', sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-size: 0.9rem;
+      padding: 10px 25px;
+      transition: all 0.3s;
+    }
+    
+    .btn-primary:hover {
+      background: linear-gradient(135deg, #00e676, #1e88e5);
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(0, 230, 118, 0.3);
+    }
+    
+    #resultado {
+      background-color: rgba(15, 20, 25, 0.7);
+      padding: 20px;
+      border-radius: 10px;
+      border: 1px solid #00e67655;
+      box-shadow: 0 0 15px rgba(0, 230, 118, 0.2);
+    }
+    
+    /* Circuito Animation */
+    @keyframes circuit-pulse {
+      0% { opacity: 0.1; }
+      50% { opacity: 0.3; }
+      100% { opacity: 0.1; }
+    }
+    
+    .circuit-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 800 800'%3E%3Cdefs%3E%3ClinearGradient id='grad' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%231e88e5' stop-opacity='0.6'/%3E%3Cstop offset='100%25' stop-color='%2300e676' stop-opacity='0.6'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cg fill='none' stroke='url(%23grad)' stroke-width='1'%3E%3Cpath d='M50,50 L750,50 L750,750 L50,750 L50,50'/%3E%3Cpath d='M100,100 L700,100 L700,700 L100,700 L100,100'/%3E%3Cpath d='M150,150 L650,150 L650,650 L150,650 L150,150'/%3E%3Cpath d='M200,200 L600,200 L600,600 L200,600 L200,200'/%3E%3Cpath d='M250,250 L550,250 L550,550 L250,550 L250,250'/%3E%3Cpath d='M300,300 L500,300 L500,500 L300,500 L300,300'/%3E%3Cpath d='M350,350 L450,350 L450,450 L350,450 L350,350'/%3E%3C/g%3E%3C/svg%3E");
+      opacity: 0.05;
+      z-index: -1;
+      animation: circuit-pulse 8s infinite;
+    }
+    
+    /* Circuit Lines */
+    .circuit-line {
+      position: absolute;
+      background: linear-gradient(90deg, #1e88e5, #00e676);
+      height: 1px;
+      width: 100%;
+      opacity: 0.2;
+    }
+    
+    .circuit-line:nth-child(1) { top: 10%; left: 0; width: 30%; }
+    .circuit-line:nth-child(2) { top: 30%; right: 0; width: 40%; }
+    .circuit-line:nth-child(3) { top: 50%; left: 0; width: 20%; }
+    .circuit-line:nth-child(4) { top: 70%; right: 0; width: 35%; }
+    .circuit-line:nth-child(5) { top: 90%; left: 0; width: 25%; }
+    
+    /* Additional responsive tweaks */
+    @media (max-width: 768px) {
+      body {
+        padding: 10px;
+      }
+      .container {
+        padding: 15px;
+      }
+      h1 {
+        font-size: 1.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <!-- Circuit background elements -->
+    <div class="circuit-bg"></div>
+    <div class="circuit-line"></div>
+    <div class="circuit-line"></div>
+    <div class="circuit-line"></div>
+    <div class="circuit-line"></div>
+    <div class="circuit-line"></div>
+
+    <h1 class="text-center mb-4">Currículo - Kleber Diego M. Junior</h1>
+    <p><strong>Contato:</strong> <a href="mailto:degemiossaga@gmail.com">degemiossaga@gmail.com</a> | +55 (89) 99919-0261</p>
+
+    <h4 class="section-title">Objetivo Profissional</h4>
+    <p>Programador de Jogos em C# | Foco em Desenvolvimento com Unity</p>
+
+    <h4 class="section-title">Resumo Profissional</h4>
+    <p>Iniciante na área de desenvolvimento de jogos com experiência prática em programação C# e desenvolvimento de interfaces usando o motor Unity. Conhecimento básico em resolução de problemas, identificação de bugs, e uso do Unreal Engine para design de níveis e interfaces.</p>
+
+    <h4 class="section-title">Experiência Profissional</h4>
+    <p><strong>Estagiário Voluntário</strong><br>
+    Hospital Filantrópico Santa Casa de Misericórdia de Ponta Grossa<br>
+    <em>Novembro de 2023 - Março de 2024</em></p>
+    <ul>
+      <li>Edição de imagens para o setor de marketing.</li>
+      <li>Suporte técnico em TI: atualizações, limpeza de disco, recuperação de arquivos.</li>
+      <li>Diagnóstico e resolução de problemas básicos.</li>
+    </ul>
+
+    <h4 class="section-title">Formação Acadêmica</h4>
+    <ul>
+      <li>Graduação em Desenvolvimento de Jogos Digitais – PUC Minas Virtual (Em andamento)</li>
+      <li>Graduação em Engenharia de Software – Unicesumar, Ponta Grossa - PR (Em andamento)</li>
+      <li>Técnico em Informática – CEEPRU Frei José Apicella, Guadalupe - PI (Concluído - 2020)</li>
+    </ul>
+
+    <h4 class="section-title">Cursos e Especializações</h4>
+    <p>Storytelling e Game Design com Unity (Em andamento)</p>
+
+    <h4 class="section-title">Idiomas</h4>
+    <ul>
+      <li>Português: Avançado</li>
+      <li>Inglês: Intermediário</li>
+    </ul>
+
+    <h4 class="section-title">Habilidades Técnicas</h4>
+    <ul>
+      <li>Linguagens de Programação: C#</li>
+      <li>Engines: Unity (Intermediário), Mugen/Fight Factory (FF3), Unreal Engine (Básico)</li>
+      <li>Suporte Técnico: Diagnóstico e resolução de problemas de hardware/software</li>
+      <li>Edição de Imagens: Experiência básica</li>
+      <li>Resolução de Problemas: Interesse contínuo em evolução na área</li>
+    </ul>
+
+    <h4 class="section-title">Informações Adicionais</h4>
+    <ul>
+      <li>Experiência como editor de imagem e técnico de TI voluntário.</li>
+      <li>Rápida adaptação a interfaces de motores de desenvolvimento.</li>
+      <li>Proatividade e aprendizado contínuo.</li>
+    </ul>
+
+    <hr>
+
+    <h3 class="section-title">Avaliação do Currículo</h3>
+    <form id="avaliadorForm">
+      <div class="mb-3">
+        <label for="nome" class="form-label">Nome do Avaliador:</label>
+        <input type="text" class="form-control" id="nome" required>
+      </div>
+      <div class="mb-3">
+        <label for="email" class="form-label">E-mail:</label>
+        <input type="email" class="form-control" id="email" required>
+      </div>
+      <div class="mb-3">
+        <label for="empresa" class="form-label">Empresa:</label>
+        <input type="text" class="form-control" id="empresa">
+      </div>
+      <div class="mb-3">
+        <label for="comentario" class="form-label">Comentário sobre o Currículo:</label>
+        <textarea class="form-control" id="comentario" rows="4" required></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary">Enviar Avaliação</button>
+    </form>
+
+    <div id="resultado" class="mt-4" style="display: none;">
+      <h5>Informações do Avaliador:</h5>
+      <p><strong>Nome:</strong> <span id="rNome"></span></p>
+      <p><strong>E-mail:</strong> <span id="rEmail"></span></p>
+      <p><strong>Empresa:</strong> <span id="rEmpresa"></span></p>
+      <p><strong>Comentário:</strong> <span id="rComentario"></span></p>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('avaliadorForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+      document.getElementById('rNome').innerText = document.getElementById('nome').value;
+      document.getElementById('rEmail').innerText = document.getElementById('email').value;
+      document.getElementById('rEmpresa').innerText = document.getElementById('empresa').value;
+      document.getElementById('rComentario').innerText = document.getElementById('comentario').value;
+      document.getElementById('resultado').style.display = 'block';
+    });
+  </script>
+</body>
+</html>
